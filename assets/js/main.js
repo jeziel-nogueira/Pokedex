@@ -6,8 +6,35 @@ let offset = 0
 
 function loadPokemonItems(offset, limit){
     function convertPokemonToHtml(pokemon){
-        let img = "https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/5781623f147f1bf850f426cfe1874ba56a9b75ee/icons/bug.svg"
+        console.log(pokemon.photo)
         return `
+                    <li class="liItemPokemon">
+                    <div class="pokemonContentFrame ${pokemon.type}">
+                        <div class="pokemonContent">
+                            <span class="pokemonNumber">#${pokemon.id}</span>
+                            <span class="pokemonName">${pokemon.name}</span>
+                            <div class="pokemonDetail">
+                                <ol class="pokemonTypes">
+                                    ${pokemon.types.map((type) => `
+                                    <li class="pokemonType ${type}">
+                                    <img class="typeIcon" src="./assets/img/icons/${type}.svg" alt="">
+                                    ${type}
+                                    </li>
+                                    `).join('')}
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="pokemonImage">
+                            <img src="${pokemon.photo}" alt="Pokémon ${pokemon.name}">
+                        </div>
+                    </div>
+                </li>`
+        
+        
+        
+        
+        
+        /* `
                 <div class="pokemon ${pokemon.type}">
                     <span class="number">#${pokemon.id}</span>
                     <span class="name">${pokemon.name}</span>
@@ -18,7 +45,7 @@ function loadPokemonItems(offset, limit){
                     <img src="${pokemon.photo}" alt="${pokemon.name}">
                     </div>
                 </div>
-        `
+        ` */
     }
     pokeApi.GetPokemons(offset, limit).then((pokemons = [])=>{
         pokemonList.innerHTML += pokemons.map(convertPokemonToHtml).join("")
