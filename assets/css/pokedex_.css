@@ -39,7 +39,7 @@
 .pokemonImage{
     border-radius: 1rem;
     width: 1rem;
-    height: auto;
+    height: 1rem;
     margin: 0;
 }
 
@@ -47,21 +47,34 @@
     padding-bottom: 1rem;
 }
 
-.pokemonImage img{
+.pokemonImage img#imgPoke{
     position: relative;
     left: -5rem;
-    top: -2.5rem;
+    top: -5rem;
     width: 6rem;
     border-radius: 1rem;
     border-style: none;
     margin: 0;
     z-index: 0;
-    filter: drop-shadow(.1rem .3rem .1rem rgba(0,0,0,0.5));
+    filter: drop-shadow(.1rem .25rem .1rem rgba(0,0,0,0.3));
+}
+
+.pokemonImage img#imgReflect{
+    position: relative;
+    left: -5rem;
+    top: -7.7rem;
+    width: 6rem;
+    border-style: none;
+    margin: 0;
+    z-index: 0;
+    transform: scaleX(1) scaley(-.3);
+    filter: blur(.1rem);
+    
 }
 
 .pokemonName{
     text-transform: capitalize;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #fff;
     margin-bottom: 0.5rem;
     text-shadow: .1rem .1rem .2rem rgb(0, 0, 0);
@@ -96,7 +109,7 @@
     list-style: none;
     padding: 0.1rem;
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.7rem;
     filter: brightness(1.1);
     box-shadow: -0.1rem -.1rem .2rem rgba(255, 255, 255, 0.356), .1rem .1rem .2rem rgba(0, 0, 0, 0.5);
     

@@ -25,7 +25,8 @@ function loadPokemonItems(offset, limit){
                             </div>
                         </div>
                         <div class="pokemonImage">
-                            <img src="${pokemon.photo}" alt="Pokémon ${pokemon.name}">
+                            <img id="imgPoke" src="${pokemon.photo}" alt="Pokémon ${pokemon.name}">
+                            <img id="imgReflect" src="${pokemon.photo}" alt="Pokémon ${pokemon.name}">
                         </div>
                     </div>
                 </li>`
