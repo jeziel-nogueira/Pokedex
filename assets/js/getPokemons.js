@@ -8,7 +8,7 @@ function loadPokemonItems(offset, limit){
     function convertPokemonToHtml(pokemon){
         return `
                     <li class="liItemPokemon">
-                    <div class="pokemonContentFrame ${pokemon.type}">
+                    <div class="pokemonContentFrame ${pokemon.type}" onclick="minhaFuncao(${pokemon.id})">
                         <div class="pokemonContent">
                             <span class="pokemonNumber">#${pokemon.id}</span>
                             <span class="pokemonName">${pokemon.name}</span>
@@ -48,3 +48,7 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItems(offset, limit)
     }
 })
+
+function minhaFuncao(valor) {
+    console.log("O valor é: " + valor);
+}

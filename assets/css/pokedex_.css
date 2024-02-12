@@ -1,3 +1,4 @@
+
 .pokemons{
     display: grid;
     grid-template-columns: 1fr;
@@ -11,11 +12,13 @@
     flex-direction: column-reverse;
     margin: .5rem;
     border-radius: 1rem;
+    
+    min-width: 10rem;
 }
 
-.pokemonContentFrame{/* 
+.pokemonContentFrame{
     display: flex;
-    justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
     border-radius: 1rem;
     height: 80%;
@@ -56,8 +59,8 @@
 
 .pokemonImage img#imgPoke{
     position: relative;
-    left: 5rem;
-    top: -7rem;
+    left: -6rem;
+    top: -2.5rem;
     width: 6rem;
     border-radius: 1rem;
     border-style: none;
@@ -69,12 +72,12 @@
 
 .pokemonImage img#imgReflect{
     position: relative;
-    left: -1rem;
-    top: -3.5rem;
+    left: -12rem;
+    top: 1.3rem;
     width: 6rem;
     border-style: none;
     margin: 0;
-    z-index: 0;
+    z-index: -1;
     transform: scaleX(1) scaley(-.3);
     filter: blur(.3rem);
     
@@ -86,6 +89,7 @@
     color: #fff;
     margin-bottom: 0.5rem;
     text-shadow: .1rem .1rem .2rem rgb(0, 0, 0);
+    z-index: 10;
 }
 
 .pokemonNumber{
@@ -95,6 +99,7 @@
     font-size: 0.7rem;
     margin-bottom: 0.5rem;
     padding-top: 1rem;
+    z-index: 10;
 }
 
 .pokemonTypes{
@@ -104,6 +109,7 @@
     justify-content: space-between;
     padding: 0;
     filter: brightness(.9);
+    z-index: 10;
 }
 
 .pokemonType{
@@ -120,7 +126,7 @@
     font-size: 0.7rem;
     filter: brightness(1.1);
     box-shadow: -0.1rem -.1rem .2rem rgba(255, 255, 255, 0.356), .1rem .1rem .2rem rgba(0, 0, 0, 0.5);
-    
+    z-index: 100;
 }
 
 .typeIcon{

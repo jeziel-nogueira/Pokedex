@@ -21,22 +21,34 @@
     
 </head>
 <body>
+    <header>        
+        <div class="nav">
+            <h2>Pokedex</h2>
+            
+            <button class="goHome">Home</button>
+        </div>
+    </header>
+    <main>
+        <section class="content">
+            <h2>1ª Generation: Kanto</h2>
+            <ol class="pokemons" id="pokemonsList">
+                <!-- listagem dos pokemons -->
+            </ol>
+            <div class="pagination">
+                <button type="button" id="loadMore">
+                    Load More
+                </button>
+            </div>
+        </section>
+    </main>
     <span>
         <button class="scrollTop">
         </button>
     </span>
-    <section class="content">
-        <h1>Pokedex</h1>
-        <ol class="pokemons" id="pokemonsList">
-            <!-- listagem dos pokemons -->
-        </ol>
-        <div class="pagination">
-            <button type="button" id="loadMore">
-                Load More
-            </button>
-        </div>
-    </section>
     
+    <footer class="footer">
+        <p>&copy; Copyright Public.</p>
+    </footer>
     <script src="../js/main.js"></script>
     <script src="../js/pokemonModel.js"></script>
     <script src="../js/poke-api.js"></script>

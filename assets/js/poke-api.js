@@ -7,9 +7,7 @@ function convertPokeApiToPokeModel(pokeDetail){
     pokemon.types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
     pokemon.type = pokemon.types[0]
     pokemon.photo = pokeDetail.sprites.other.home.front_default
-    if (pokemon.name == 'kakuna'){
-        console.log(pokemon.id)
-    }
+    
     return pokemon
 }
 
