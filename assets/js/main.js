@@ -1,68 +1,13 @@
-const pokemonList = document.getElementById('pokemonsList')
-const loadMoreButton = document.getElementById('loadMore')
-let maxRecord = 151
-let limit = 20
-let offset = 0
+const btnScrollTop = document.querySelector(".scrollTop")
 
-function loadPokemonItems(offset, limit){
-    function convertPokemonToHtml(pokemon){
-        console.log(pokemon.photo)
-        return `
-                    <li class="liItemPokemon">
-                    <div class="pokemonContentFrame ${pokemon.type}">
-                        <div class="pokemonContent">
-                            <span class="pokemonNumber">#${pokemon.id}</span>
-                            <span class="pokemonName">${pokemon.name}</span>
-                            <div class="pokemonDetail">
-                                <ol class="pokemonTypes">
-                                    ${pokemon.types.map((type) => `
-                                    <li class="pokemonType ${type}">
-                                    <img class="typeIcon" src="./assets/img/icons/${type}.svg" alt="">
-                                    ${type}
-                                    </li>
-                                    `).join('')}
-                                </ol>
-                            </div>
-                        </div>
-                        <div class="pokemonImage">
-                            <img id="imgPoke" src="${pokemon.photo}" alt="Pokémon ${pokemon.name}">
-                            <img id="imgReflect" src="${pokemon.photo}" alt="Pokémon ${pokemon.name}">
-                        </div>
-                    </div>
-                </li>`
-        
-        
-        
-        
-        
-        /* `
-                <div class="pokemon ${pokemon.type}">
-                    <span class="number">#${pokemon.id}</span>
-                    <span class="name">${pokemon.name}</span>
-                    <div class="detail">
-                        <ol class="types">
-                            ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
-                        </ol>
-                    <img src="${pokemon.photo}" alt="${pokemon.name}">
-                    </div>
-                </div>
-        ` */
-    }
-    pokeApi.GetPokemons(offset, limit).then((pokemons = [])=>{
-        pokemonList.innerHTML += pokemons.map(convertPokemonToHtml).join("")
+window.addEventListener('scroll', function(){
+    let scroll = this.document.querySelector(".scrollTop")
+    scroll.classList.toggle('active', this.window.scrollY > 450)
+})
+btnScrollTop.addEventListener('click', function (){
+    console.log("top")
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     })
-}
-
-loadPokemonItems(offset, limit)
-loadMoreButton.addEventListener('click', () => {
-    offset += limit
-    const qntLimit = offset + limit
-    if(qntLimit >= maxRecord){
-        const newLimit = maxRecord - offset
-        loadPokemonItems(offset, newLimit)
-        loadMoreButton.parentElement.removeChild(loadMoreButton)
-        console.log("Removed")
-    }else{
-        loadPokemonItems(offset, limit)
-    }
 })

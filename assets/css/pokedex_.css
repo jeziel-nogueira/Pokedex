@@ -1,7 +1,7 @@
-.pokemonsList{
+.pokemons{
     display: grid;
-    list-style: none;
     grid-template-columns: 1fr;
+    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -13,17 +13,18 @@
     border-radius: 1rem;
 }
 
-.pokemonContentFrame{
+.pokemonContentFrame{/* 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; */
     align-items: center;
     border-radius: 1rem;
     height: 80%;
     padding-bottom: 0.5rem;
-    background-image: url(../img/pokeball.png);
-    background-size: 10rem;
+    background-image: url(../img/pokeball.png), url(../img/Gradient-Background.png);
+    background-size: 10rem, cover;
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: right center, center;
+    box-shadow: -0.1rem -.1rem .2rem rgba(255, 255, 255, 0.897), .1rem .1rem .2rem rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
 
@@ -37,6 +38,12 @@
 
 
 .pokemonImage{
+    /*  */
+    align-self: center;
+    display: flex;
+    align-items: center;
+    /*  */
+
     border-radius: 1rem;
     width: 1rem;
     height: 1rem;
@@ -49,26 +56,27 @@
 
 .pokemonImage img#imgPoke{
     position: relative;
-    left: -5rem;
-    top: -5rem;
+    left: 5rem;
+    top: -7rem;
     width: 6rem;
     border-radius: 1rem;
     border-style: none;
     margin: 0;
-    z-index: 0;
+    z-index: 1;
+    filter: brightness(1.1) contrast(.1);
     filter: drop-shadow(.1rem .25rem .1rem rgba(0,0,0,0.3));
 }
 
 .pokemonImage img#imgReflect{
     position: relative;
-    left: -5rem;
-    top: -7.7rem;
+    left: -1rem;
+    top: -3.5rem;
     width: 6rem;
     border-style: none;
     margin: 0;
     z-index: 0;
     transform: scaleX(1) scaley(-.3);
-    filter: blur(.1rem);
+    filter: blur(.3rem);
     
 }
 
@@ -118,21 +126,21 @@
 .typeIcon{
     width: 1rem;
 }
-
-@media screen and (min-width: 450px){
-    .pokemonsList{
+ 
+@media screen and (min-width: 380px){
+    .pokemons{
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media screen and (min-width: 576px){
-    .pokemonsList{
+    .pokemons{
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
 @media screen and (min-width: 992px){
-    .pokemonsList{
+    .pokemons{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
