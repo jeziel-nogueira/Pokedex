@@ -1,0 +1,84 @@
+
+.listType, .listGeneration{
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    grid-template-columns: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listContent{
+    display: flex;
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 3rem;
+}
+
+.btnGenerationList{
+    display: flex;
+    position: relative;
+    align-self: center;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+    border: 0;
+    border-radius: .5rem;
+    margin: 0;
+    padding: .5rem;
+    background-color: aqua;
+}
+
+.btnType{
+    display: flex;
+    position: relative;
+    align-self: center;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 80%;
+    border: 0;
+    border-radius: .5rem;
+    margin: 0;
+    padding: .5rem;
+}
+
+.btnType img{
+    position: relative;
+    padding-right: .5rem;
+    width: 2rem;
+}
+@media screen and (min-width: 380px){
+    .listGeneration{
+        grid-template-columns: 1fr 1fr;
+    }
+    .listType{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 576px){
+    .listGeneration{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .listType{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .listGeneration{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .listType{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}

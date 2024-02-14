@@ -15,6 +15,8 @@
     
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/pokedex_.css">
 </head>
 <body>
     <header>
@@ -32,40 +34,53 @@
                 <input type="text" class="input" id="inputField">
                 <button class="btnSearch" type="button">Search</button>
             </div>
-            <div class="generationList">
-                <h3>By Generation</h3>
-                <nav>
-                    <button type="button" onclick="loadPokemonList()">Generation 1: Kanto </button>
-                    <button type="button">Generation 2: Johto </button>
-                    <button type="button">Generation 3: Hoenn </button>
-                    <button type="button">Generation 4: Sinnoh </button>
-                    <button type="button">Generation 5: Unova </button>
-                    <button type="button">Generation 6: Kalos </button>
-                    <button type="button">Generation 7: Alola </button>
-                    <button type="button">Generation 8: Galar </button>
-                    <button type="button">Generation 9: Paldea </button>
-                </nav>
-                <nav>
+            <div class="mainDiv">
+                <div class="generationList">
+                    <h3>By Generation</h3>
+                    <div class="btnContent">
+                        <ol class="listGeneration">
+                            <li class="listContent">
+                                <button type="button" class="btnGenerationList Kanto" onclick="loadGeneraion(1, 'Kanto')">Kanto </button>
+                            </li>
+                            <li class="listContent">
+                                <button type="button" class="btnGenerationList Johto" onclick="loadGeneraion(2, 'Johto')">Johto </button>
+                            </li>
+                            <li class="listContent">
+                                <button type="button" class="btnGenerationList Hoenn" onclick="loadGeneraion(3, 'Hoenn')">Hoenn </button>
+                            </li>
+                            <li class="listContent">
+                                <button type="button" class="btnGenerationList Sinnoh" onclick="loadGeneraion(4, 'Sinnoh')">Sinnoh </button>
+                            </li>
+                            <li class="listContent">
+                                <button type="button" class="btnGenerationList Unova" onclick="loadGeneraion(5, 'Unova')">Unova </button>
+                            </li>
+                            <li class="listContent">
+                                <button type="button" class="btnGenerationList Kalos" onclick="loadGeneraion(6, 'Kalos')">Kalos </button>
+                            </li>
+                            <li class="listContent">
+                                <button type="button" class="btnGenerationList Alola" onclick="loadGeneraion(7, 'Alola')">Alola </button>
+                            </li>
+                            <li class="listContent">
+                                <button type="button" class="btnGenerationList Galar" onclick="loadGeneraion(8, 'Galar')">Galar </button>
+                            </li>
+                            <li class="listContent">
+                                <button type="button" class="btnGenerationList Paldea" onclick="loadGeneraion(9, 'Paldea')">Paldea </button>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+
+                <div class="typesList">
                     <h3>By Principal Type</h3>
-                    <button type="button">Normal </button>
-                    <button type="button">Grass </button>
-                    <button type="button">Fire </button>
-                    <button type="button">Water </button>
-                    <button type="button">Electric </button>
-                    <button type="button">Ice </button>
-                    <button type="button">Ground </button>
-                    <button type="button">Flying </button>
-                    <button type="button">Poison </button>
-                    <button type="button">Fighting </button>
-                    <button type="button">Psychic </button>
-                    <button type="button">Dark </button>
-                    <button type="button">Rock </button>
-                    <button type="button">Bug </button>
-                    <button type="button">Ghost </button>
-                    <button type="button">Steel </button>
-                    <button type="button">Dragon </button>
-                    <button type="button">Fairy </button>
-                </nav>
+                    <div class="btnContent">
+                        <ol class="listType" id="listType">
+                            <!-- <li class="listContent">
+                                <button type="button" class="btnType normal">Normal </button>
+                            </li> -->
+                        </ol>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -77,6 +92,7 @@
     <footer class="footer">
         <p>&copy; Copyright Public.</p>
     </footer>
+    <script src="./assets/js/poke-api.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
