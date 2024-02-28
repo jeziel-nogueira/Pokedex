@@ -36,6 +36,9 @@
 .fairy {
      background-color: #f9aec7;}
 
+.pageTitle{
+    padding-left: 1rem;
+}
 .pokemons{
     display: grid;
     grid-template-columns: 1fr;
@@ -49,7 +52,6 @@
     flex-direction: column-reverse;
     margin: .5rem;
     border-radius: 1rem;
-    
     min-width: 10rem;
 }
 
@@ -160,7 +162,7 @@
     list-style: none;
     padding: 0.1rem;
     color: #fff;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     filter: brightness(1.1);
     box-shadow: -0.1rem -.1rem .2rem rgba(255, 255, 255, 0.356), .1rem .1rem .2rem rgba(0, 0, 0, 0.5);
     z-index: 100;

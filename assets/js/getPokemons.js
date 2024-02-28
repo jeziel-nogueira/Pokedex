@@ -9,32 +9,35 @@ let limit = 20
 let offset = 0
 let title = "Kanto"
 
-var userData = JSON.parse( localStorage.getItem('userData') );
+var userData = JSON.parse( localStorage.getItem('userDataList') );
 if(userData === null){
-    console.log("NULLLL")
-}else{
-    if(userData.type == null){
-        maxRecord = parseInt(userData.maxRecord)
-        limit = parseInt(userData.limit)
-        offset = parseInt(userData.offset)
-        title = userData.title
-        loadPokemonItems(offset, limit)
+    window.location.href = "/index.html"
+}else if(userData.title != null){
+        if(pokeApi.types.includes(userData.title.toLowerCase())){
+            console.log('Aqui')
+            loadMoreButton.parentElement.removeChild(loadMoreButton)
+            loadType(userData.title.toLowerCase())
+        }else{
+            maxRecord = parseInt(userData.maxRecord)
+            limit = parseInt(userData.limit)
+            offset = parseInt(userData.offset)
+            title = userData.title
+            loadPokemonItems(offset, limit)
+        }
     }else{
-        title = userData.title
-        loadType(userData.type) 
+        window.location.href = "/index.html"
     }
-}
 
 
 
 function convertPokemonToHtml(pokemon){
-    pageTitle.innerHTML = `<h2 id="pageTitle">${title}</h2>`
+    pageTitle.innerHTML = `<h2>${title}</h2>`
     if(!pokemon.is_default){
-        console.log(pokemon.name)
+        console.log(pokemon.name, '!is_default')
     }
     return `
                 <li class="liItemPokemon">
-                <div class="pokemonContentFrame ${pokemon.type}" onclick="minhaFuncao(${pokemon.id})">
+                <div class="pokemonContentFrame ${pokemon.type}" onclick="loadPokeDetail(${pokemon.id})">
                     <div class="pokemonContent">
                         <span class="pokemonNumber">#${pokemon.id}</span>
                         <span class="pokemonName">${pokemon.name}</span>
@@ -86,7 +89,6 @@ function loadType(type) {
     if (pokeApi && typeof pokeApi.GetPokemonsByType === 'function') {
         pokeApi.GetPokemonsByType(type)
             .then((pokemons = []) => {
-                console.log("OPA")
                 pokemonList.innerHTML += pokemons.map(convertPokemonToHtml).join("");
             })
             .then((opa) => console.log(opa))
@@ -96,4 +98,10 @@ function loadType(type) {
     } else {
         console.error("pokeApi or GetPokemonsByType is not defined or is not a function");
     }
+}
+
+function loadPokeDetail(id){
+    userData = { "id": id}
+    localStorage.setItem("userDataId", JSON.stringify(userData))
+    window.location.href = "./pokemonDetail.html"
 }

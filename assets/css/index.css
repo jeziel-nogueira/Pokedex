@@ -1,9 +1,28 @@
 
-.listType, .listGeneration{
+
+.mainDiv, .search{
+    padding: 1rem 1rem 1rem;
+}
+
+.searchContent{
+    margin: 1rem;
+}
+
+.listGeneration{
     display: grid;
     justify-content: space-around;
     align-items: center;
     grid-template-columns: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listType{
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    grid-template-columns: 2rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -29,18 +48,80 @@
     justify-content: center;
     width: 90%;
     height: 90%;
-    border: 0;
+    border: .1rem;
+    border-color: #585858;
+    border-style: solid;
     border-radius: .5rem;
     margin: 0;
     padding: .5rem;
-    background-color: aqua;
+    background: linear-gradient(rgba(6, 24, 49, 0.726), #233125);
 }
+
+.textoLocation {
+    color: #fff;
+  }
+
+/* 
+.Kanto{
+    background-image: url(../img/kanto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Johto{
+    background-image: url(../img/johto5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Hoenn{
+    background-image: url(../img/hoenn2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Sinnoh{
+    background-image: url(../img/sinnoh5.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Unova{
+    background-image: url(../img/unova7.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Alola{
+    background-image: url(../img/alola9.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Galar{
+    background-image: url(../img/galar3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Kalos{
+    background-image: url(../img/kalos4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Paldea{
+    background-image: url(../img/paldea1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
 
 .btnType{
     display: flex;
     position: relative;
     align-self: center;
-    justify-content: space-around;
     align-items: center;
     justify-content: center;
     width: 70%;
@@ -49,6 +130,11 @@
     border-radius: .5rem;
     margin: 0;
     padding: .5rem;
+    color: #000;
+    background-image: url(../img/pokeball.png), url(../img/Gradient-Background.png);
+    background-size: 5rem, cover;
+    background-repeat: no-repeat;
+    background-position: center, center;
 }
 
 .btnType img{
@@ -56,7 +142,26 @@
     padding-right: .5rem;
     width: 2rem;
 }
-@media screen and (min-width: 380px){
+
+@media screen and (min-width: 300px){
+    .listGeneration{
+        grid-template-columns: 1fr;
+    }
+    .listType{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 370px){
+    .listGeneration{
+        grid-template-columns: 1fr 1fr;
+    }
+    .listType{
+        grid-template-columns: 1fr 1fr ;
+    }
+}
+
+@media screen and (min-width: 470px){
     .listGeneration{
         grid-template-columns: 1fr 1fr;
     }
@@ -65,7 +170,7 @@
     }
 }
 
-@media screen and (min-width: 576px){
+@media screen and (min-width: 640px){
     .listGeneration{
         grid-template-columns: 1fr 1fr 1fr;
     }

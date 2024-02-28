@@ -14,27 +14,84 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100;1,900&display=swap" rel="stylesheet">
     
     <!-- css -->
-    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/pokemonDetail.css">
+    <link rel="stylesheet" href="../css/pokedex_.css">
 </head>
 <body>
-    <header>
-        <h2>LOGO</h2>
+    <header>        
         <div class="nav">
-            <a href="/assets/html/pokemonList.html">Lista</a>
+            <h1 class="pokedex">Pokedex</h1>
+            
+            <button class="goHome">Home</button>
         </div>
-
     </header>
     <main>
-
+        <div class="content" id="content">
+            
+            <div class="pokeImg" id="pokeImg">
+                <div class="details">
+                    <div class="detail">
+                        <p class="pokeNmae">name</p>
+                        <p class="pokeId">#id</p>
+                    </div>
+                </div>
+                <div class="img">
+                    <img class="pokeImgView" id="pokeImgView" src="" alt="">
+                </div>
+            </div>
+            <div class="pokeAbout">
+                <ol class="pokeTypes">
+                    <li>type</li>
+                </ol>
+                <div class="pokeWight">Wight</div>
+                <div class="pokeHeight">Height</div>
+            </div>
+            <div class="pokeStats">
+                <div class="statHp">Hp</div>
+                <div class="statAtk">Attack</div>
+                <div class="statDef">Defense</div>
+                <div class="statSpecialAtk">Special Atk</div>
+                <div class="statSpecialDef">Special Def</div>
+                <div class="statSpeed">Speed</div>
+                <div class="pokeDesc">
+                    <p class="pokeDescText">Description</p>
+                </div>
+                <div class="damageRelations">
+                    <ol class="doubleDamageFrom"></ol>
+                    <ol class="doubleDamageTo"></ol>
+                    <ol class="halfDamageFrom"></ol>
+                    <ol class="halfDamageTo"></ol>
+                    <ol class="noDamageFrom"></ol>
+                    <ol class="noDamageTo"></ol>
+                </div>
+            </div>
+            <div class="pokeData">
+                <div class="pokeSpecie">Specie</div>
+                <ol class="pokeHabilitiesList">
+                    <ul class="pokeHabilitie">habiliti</ul>
+                </ol>
+                <ol class="pokeWeakenes">
+                    <ul class="pokeWeakene">
+                        <span class="pokeWeakeneimg">Weakene</span>
+                    </ul>
+                </ol>
+                <div class="captureRate">Capture Rate</div>
+                <div class="groups">Group</div>
+            </div>
+        </div>
     </main>
     <span>
         <button class="scrollTop">
         </button>
     </span>
     
-    <footer>
-        <h2>&copy; Copyright Public.</h2>
+    <footer class="footer">
+        <p>&copy; Copyright Public.</p>
     </footer>
-    <script src="./assets/js/main.js"></script>
+    <script src="../js/pokemonModel.js"></script>
+    <script src="../js/poke-api.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/pokemonDetails.js"></script>
 </body>
 </html>
