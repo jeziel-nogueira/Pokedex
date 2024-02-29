@@ -33,8 +33,10 @@
                     <h3>What Pokemón are you looking for?</h3>
                     <p>Search for Pokémon by name or using the National Pokédex number.</p>
                     
-                    <input type="text" class="input" id="inputField">
-                    <button class="btnSearch" type="button">Search</button>
+                    <div class="searchInput">
+                        <input type="text" class="input" id="inputField">
+                        <button class="btnSearch input" type="button">Search</button>
+                    </div>
                 </div>
             </div>
             <div class="mainDiv">
@@ -123,12 +125,11 @@
             </div>
         </div>
     </main>
-    <span>
-        <button class="scrollTop">
-        </button>
-    </span>
-    
     <footer class="footer">
+        <span>
+            <button class="scrollTop">
+            </button>
+        </span>
         <p>&copy; Copyright Public.</p>
     </footer>
     <script src="./assets/js/poke-api.js"></script>
