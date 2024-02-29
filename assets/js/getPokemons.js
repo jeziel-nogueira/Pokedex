@@ -16,6 +16,7 @@ if(userData === null){
         if(pokeApi.types.includes(userData.title.toLowerCase())){
             console.log('Aqui')
             loadMoreButton.parentElement.removeChild(loadMoreButton)
+            title = userData.title
             loadType(userData.title.toLowerCase())
         }else{
             maxRecord = parseInt(userData.maxRecord)
